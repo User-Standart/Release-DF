@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidade — DirigeFácil</title>
+  <meta name="description" content="App de controle financeiro para quem trabalha com veículo: motorista de app, motoboy, van, frete e táxi. 14 dias grátis.">
+  <meta property="og:title" content="DirigeFácil">
+  <meta property="og:description" content="Quanto sobrou depois de descontar tudo? 14 dias grátis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2EFE6; --surface: #FBF9F4; --ink: #1B1915; --on-ink: #FBF9F4;
+      --on-ink-muted: #9C978B; --border: #E2DCCE; --text: #1F1D19;
+      --text-2: #6E6A60; --gain: #5F7C32; --expense: #B4472E;
+      --alert: #B07C14; --alert-bg: #F6EBD4; --alert-border: #E6D2A8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.55 "Archivo", system-ui, sans-serif;
+    }
+    main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1, h2 { line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: 32px; font-weight: 700; }
+    h2 { font-size: 22px; font-weight: 600; margin-top: 48px; }
+    p { margin: 0 0 12px; }
+    .muted { color: var(--text-2); }
+    .num { font-family: "Outfit", sans-serif; font-variant-numeric: tabular-nums; }
+    .brand { font-weight: 700; letter-spacing: .02em; margin-bottom: 32px; }
+
+    .hero {
+      background: var(--ink); color: var(--on-ink);
+      border-radius: 24px; padding: 28px 24px; margin-bottom: 24px;
+    }
+    .hero .label { font-size: 12px; letter-spacing: .08em; color: var(--on-ink-muted); }
+    .hero .big { font-size: 44px; font-weight: 700; margin: 4px 0 16px; }
+    .hero .row { display: flex; gap: 24px; font-size: 14px; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+
+    .download {
+      display: block; text-align: center; text-decoration: none;
+      background: var(--gain); color: #fff; font-weight: 600; font-size: 18px;
+      border-radius: 14px; padding: 18px; margin: 24px 0 8px;
+    }
+    .download:active { opacity: .85; }
+    .small { font-size: 13px; }
+    .center { text-align: center; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px; margin-bottom: 12px;
+    }
+    ul.check { list-style: none; padding: 0; margin: 0; }
+    ul.check li { padding-left: 26px; position: relative; margin-bottom: 8px; }
+    ul.check li::before { content: "✓"; position: absolute; left: 0; color: var(--gain); font-weight: 700; }
+
+    .plans { display: grid; gap: 12px; }
+    .plan { display: flex; justify-content: space-between; align-items: center; }
+    .plan strong { display: block; }
+    .plan .price { font-size: 22px; font-weight: 600; text-align: right; }
+    .plan.highlight { border-color: var(--alert); border-width: 2px; }
+
+    ol.steps { padding-left: 0; list-style: none; counter-reset: step; margin: 0; }
+    ol.steps li { counter-increment: step; position: relative; padding-left: 44px; margin-bottom: 20px; }
+    ol.steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--ink); color: var(--on-ink);
+      font: 600 15px/30px "Outfit", sans-serif; text-align: center;
+    }
+    .note {
+      background: var(--alert-bg); border: 1px solid var(--alert-border);
+      border-radius: 12px; padding: 14px 16px; font-size: 14px;
+    }
+    details { border-bottom: 1px solid var(--border); padding: 14px 0; }
+    summary { cursor: pointer; font-weight: 600; }
+    details p { margin-top: 8px; color: var(--text-2); }
+    footer { margin-top: 48px; font-size: 13px; color: var(--text-2); }
+    a { color: var(--ink); }
+  </style>
+  <style>
+    .legal h2 { font-size: 19px; margin-top: 32px; }
+    .legal ul { padding-left: 20px; margin: 0 0 12px; }
+    .legal li { margin-bottom: 6px; }
+    .legal table { border-collapse: collapse; width: 100%; font-size: 14px; margin-bottom: 12px; }
+    .legal th, .legal td { border: 1px solid var(--border); padding: 8px; text-align: left; vertical-align: top; }
+    .legal th { background: var(--surface); }
+  </style>
+</head>
+<body>
+<main class="legal">
+  <div class="brand"><a href="./" style="text-decoration:none">DirigeFácil</a></div>
+  <h1>Política de privacidade</h1>
+  <p class="muted small">Versão de 23/09/2026</p>
+
+  <p>Esta política explica quais dados o DirigeFácil trata, por quê, por quanto tempo e como você exerce seus direitos, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018 — LGPD).</p>
+
+  <h2>1. Quem é o responsável</h2>
+  <p>O controlador dos dados é <strong>Caio Osorio</strong>, pessoa física. Contato para qualquer assunto de privacidade, inclusive pedidos de titular: <a href="mailto:usercaio.business@gmail.com">usercaio.business@gmail.com</a>.</p>
+
+  <h2>2. O que fica só no seu celular</h2>
+  <p>Ganhos, gastos, quilometragem, veículos, metas e objetivos que você lança ficam gravados <strong>no seu aparelho</strong>. Nós não temos acesso a eles, a não ser pela cópia de segurança descrita abaixo.</p>
+
+  <h2>3. O que tratamos e por quê</h2>
+  <table>
+    <tr><th>Dado</th><th>Para quê</th><th>Base legal (LGPD art. 7º)</th></tr>
+    <tr><td>Nome e email</td><td>Criar e acessar sua conta, recuperar a senha</td><td>Execução de contrato</td></tr>
+    <tr><td>Plano, validade e histórico de pagamentos</td><td>Liberar o acesso pago</td><td>Execução de contrato; obrigação legal (registros fiscais)</td></tr>
+    <tr><td>Cópia de segurança dos lançamentos</td><td>Restaurar seus dados se trocar ou perder o celular</td><td>Execução de contrato</td></tr>
+    <tr><td>Data e versão do aceite destes termos</td><td>Comprovar seu consentimento</td><td>Cumprimento de obrigação legal</td></tr>
+  </table>
+  <p>Não coletamos localização, contatos, fotos, dados de saúde, nem dados das plataformas em que você trabalha (Uber, 99, iFood etc.). Não vendemos dados, não usamos para publicidade e não fazemos perfil de comportamento.</p>
+
+  <h2>4. Com quem compartilhamos</h2>
+  <ul>
+    <li><strong>Supabase</strong> — hospeda a conta e a cópia de segurança. Os servidores ficam nos Estados Unidos; a transferência internacional segue o art. 33 da LGPD, com as garantias contratuais do fornecedor.</li>
+    <li><strong>Mercado Pago</strong> — processa os pagamentos. Dados de cartão e Pix ficam com eles e nunca passam pelo app.</li>
+  </ul>
+  <p>Fora isso, só compartilhamos dados se uma autoridade exigir por lei.</p>
+
+  <h2>5. Por quanto tempo</h2>
+  <ul>
+    <li><strong>Conta e cópia de segurança</strong>: enquanto a conta existir. Excluindo a conta, apagamos na hora.</li>
+    <li><strong>Registros de pagamento</strong>: 5 anos, pela legislação fiscal. Ao excluir a conta, eles deixam de ser ligados a você.</li>
+    <li><strong>Dados no celular</strong>: até você apagar pelo app ou desinstalar.</li>
+  </ul>
+
+  <h2>6. Seus direitos</h2>
+  <p>Você pode, a qualquer momento e sem custo (LGPD art. 18):</p>
+  <ul>
+    <li><strong>baixar uma cópia</strong> dos seus dados — no app, em Mais › Privacidade e dados › Baixar meus dados;</li>
+    <li><strong>excluir sua conta</strong> e tudo ligado a ela — no app, em Mais › Privacidade e dados › Excluir minha conta, ou <a href="excluir-conta.html">por esta página</a>;</li>
+    <li><strong>corrigir</strong> dados, <strong>saber</strong> com quem compartilhamos, <strong>revogar</strong> o consentimento ou <strong>reclamar</strong> — pelo email <a href="mailto:usercaio.business@gmail.com">usercaio.business@gmail.com</a>. Respondemos em até 15 dias.</li>
+  </ul>
+  <p>Se não ficar satisfeito, você pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD), em gov.br/anpd.</p>
+
+  <h2>7. Segurança</h2>
+  <p>A comunicação com o servidor é criptografada (HTTPS). No servidor, cada conta só enxerga os próprios dados. Se houver um incidente de segurança que possa te causar risco ou dano relevante, avisaremos você e a ANPD.</p>
+
+  <h2>8. Crianças</h2>
+  <p>O DirigeFácil é para maiores de 18 anos.</p>
+
+  <h2>9. Mudanças</h2>
+  <p>Se esta política mudar de forma relevante, avisaremos no app e pediremos seu aceite de novo.</p>
+  <footer><p><a href="./">Início</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="excluir-conta.html">Excluir conta</a></p></footer>
+</main>
+</body>
+</html>

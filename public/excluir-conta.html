@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excluir conta — DirigeFácil</title>
+  <meta name="description" content="App de controle financeiro para quem trabalha com veículo: motorista de app, motoboy, van, frete e táxi. 14 dias grátis.">
+  <meta property="og:title" content="DirigeFácil">
+  <meta property="og:description" content="Quanto sobrou depois de descontar tudo? 14 dias grátis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2EFE6; --surface: #FBF9F4; --ink: #1B1915; --on-ink: #FBF9F4;
+      --on-ink-muted: #9C978B; --border: #E2DCCE; --text: #1F1D19;
+      --text-2: #6E6A60; --gain: #5F7C32; --expense: #B4472E;
+      --alert: #B07C14; --alert-bg: #F6EBD4; --alert-border: #E6D2A8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.55 "Archivo", system-ui, sans-serif;
+    }
+    main { max-width: 640px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1, h2 { line-height: 1.2; margin: 0 0 12px; }
+    h1 { font-size: 32px; font-weight: 700; }
+    h2 { font-size: 22px; font-weight: 600; margin-top: 48px; }
+    p { margin: 0 0 12px; }
+    .muted { color: var(--text-2); }
+    .num { font-family: "Outfit", sans-serif; font-variant-numeric: tabular-nums; }
+    .brand { font-weight: 700; letter-spacing: .02em; margin-bottom: 32px; }
+
+    .hero {
+      background: var(--ink); color: var(--on-ink);
+      border-radius: 24px; padding: 28px 24px; margin-bottom: 24px;
+    }
+    .hero .label { font-size: 12px; letter-spacing: .08em; color: var(--on-ink-muted); }
+    .hero .big { font-size: 44px; font-weight: 700; margin: 4px 0 16px; }
+    .hero .row { display: flex; gap: 24px; font-size: 14px; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+
+    .download {
+      display: block; text-align: center; text-decoration: none;
+      background: var(--gain); color: #fff; font-weight: 600; font-size: 18px;
+      border-radius: 14px; padding: 18px; margin: 24px 0 8px;
+    }
+    .download:active { opacity: .85; }
+    .small { font-size: 13px; }
+    .center { text-align: center; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 20px; margin-bottom: 12px;
+    }
+    ul.check { list-style: none; padding: 0; margin: 0; }
+    ul.check li { padding-left: 26px; position: relative; margin-bottom: 8px; }
+    ul.check li::before { content: "✓"; position: absolute; left: 0; color: var(--gain); font-weight: 700; }
+
+    .plans { display: grid; gap: 12px; }
+    .plan { display: flex; justify-content: space-between; align-items: center; }
+    .plan strong { display: block; }
+    .plan .price { font-size: 22px; font-weight: 600; text-align: right; }
+    .plan.highlight { border-color: var(--alert); border-width: 2px; }
+
+    ol.steps { padding-left: 0; list-style: none; counter-reset: step; margin: 0; }
+    ol.steps li { counter-increment: step; position: relative; padding-left: 44px; margin-bottom: 20px; }
+    ol.steps li::before {
+      content: counter(step); position: absolute; left: 0; top: 0;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--ink); color: var(--on-ink);
+      font: 600 15px/30px "Outfit", sans-serif; text-align: center;
+    }
+    .note {
+      background: var(--alert-bg); border: 1px solid var(--alert-border);
+      border-radius: 12px; padding: 14px 16px; font-size: 14px;
+    }
+    details { border-bottom: 1px solid var(--border); padding: 14px 0; }
+    summary { cursor: pointer; font-weight: 600; }
+    details p { margin-top: 8px; color: var(--text-2); }
+    footer { margin-top: 48px; font-size: 13px; color: var(--text-2); }
+    a { color: var(--ink); }
+  </style>
+  <style>
+    .legal h2 { font-size: 19px; margin-top: 32px; }
+    .legal ul { padding-left: 20px; margin: 0 0 12px; }
+    .legal li { margin-bottom: 6px; }
+    .legal table { border-collapse: collapse; width: 100%; font-size: 14px; margin-bottom: 12px; }
+    .legal th, .legal td { border: 1px solid var(--border); padding: 8px; text-align: left; vertical-align: top; }
+    .legal th { background: var(--surface); }
+  </style>
+</head>
+<body>
+<main class="legal">
+  <div class="brand"><a href="./" style="text-decoration:none">DirigeFácil</a></div>
+  <h1>Excluir sua conta</h1>
+
+  <h2>Pelo app (na hora)</h2>
+  <ol>
+    <li>Abra o DirigeFácil e entre na sua conta.</li>
+    <li>Vá em <strong>Mais › Privacidade e dados</strong>.</li>
+    <li>Toque em <strong>Excluir minha conta</strong>, digite EXCLUIR e confirme.</li>
+  </ol>
+
+  <h2>Sem o app</h2>
+  <p>Mande um email para <a href="mailto:usercaio.business@gmail.com?subject=Excluir%20minha%20conta">usercaio.business@gmail.com</a> a partir do endereço cadastrado, com o assunto "Excluir minha conta". Excluímos em até 15 dias e confirmamos por email.</p>
+
+  <h2>O que é apagado</h2>
+  <ul>
+    <li>Conta (nome, email, senha)</li>
+    <li>Assinatura e o tempo que ainda faltava</li>
+    <li>Cópia de segurança na nuvem</li>
+    <li>Registro de aceite dos termos</li>
+  </ul>
+
+  <h2>O que fica</h2>
+  <ul>
+    <li><strong>Registros de pagamento</strong>, por 5 anos, por obrigação fiscal — sem ligação com o seu nome ou email.</li>
+    <li><strong>Os lançamentos no seu celular</strong>, a não ser que você marque "apagar também os lançamentos deste celular" ou desinstale o app.</li>
+  </ul>
+  <footer><p><a href="./">Início</a> · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · <a href="excluir-conta.html">Excluir conta</a></p></footer>
+</main>
+</body>
+</html>

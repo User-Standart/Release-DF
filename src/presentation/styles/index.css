@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+/* Design tokens from DESIGN.md ("DirigeFácil Tactile Editorial"). */
+@theme {
+  --color-surface: #fcf9f0;
+  --color-surface-dim: #dddad1;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f3ea;
+  --color-surface-container: #f1eee5;
+  --color-surface-container-high: #ebe8df;
+  --color-surface-container-highest: #e5e2da;
+  --color-surface-variant: #e5e2da;
+  --color-surface-tint: #615e59;
+  --color-on-surface: #1c1c17;
+  --color-on-surface-variant: #4a463f;
+  --color-outline: #7b766e;
+  --color-outline-variant: #ccc6bc;
+
+  --color-primary: #000000;
+  --color-primary-container: #1d1b17;
+  --color-on-primary-container: #87837d;
+
+  --color-secondary: #4b671f;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed: #ccee96;
+  --color-on-secondary-fixed: #121f00;
+
+  --color-tertiary-fixed-dim: #ffb4a3;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+
+  --color-founder: #b07c14;
+  --color-founder-soft: #f8f1dc;
+  --color-founder-line: #d4af37;
+
+  --font-sans: 'Archivo Narrow', ui-sans-serif, system-ui, sans-serif;
+  --font-numeric: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-lg: 44px;
+  --text-display-lg--line-height: 48px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+  --text-display-lg-mobile: 34px;
+  --text-display-lg-mobile--line-height: 38px;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-display-lg-mobile--font-weight: 700;
+  --text-headline-lg: 26px;
+  --text-headline-lg--line-height: 32px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 26px;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 17px;
+  --text-headline-sm--line-height: 22px;
+  --text-headline-sm--font-weight: 600;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 16px;
+  --text-body-sm--font-weight: 500;
+  --text-numeric-hero: 38px;
+  --text-numeric-hero--line-height: 42px;
+  --text-numeric-hero--letter-spacing: -0.02em;
+  --text-numeric-hero--font-weight: 700;
+  --text-numeric-lg: 24px;
+  --text-numeric-lg--line-height: 28px;
+  --text-numeric-lg--font-weight: 600;
+  --text-numeric-md: 18px;
+  --text-numeric-md--line-height: 22px;
+  --text-numeric-md--font-weight: 600;
+  --text-label-caps: 11px;
+  --text-label-caps--line-height: 14px;
+  --text-label-caps--letter-spacing: 0.08em;
+  --text-label-caps--font-weight: 700;
+
+  --spacing-gutter: 0.75rem;
+  --spacing-margin: 1rem;
+  --spacing-margin-md: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface font-sans text-body-md text-on-surface antialiased;
+  }
+
+  ::selection {
+    @apply bg-secondary text-on-secondary;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Every currency, percentage and counter uses Outfit with tabular figures. */
+@utility numeric {
+  font-family: var(--font-numeric);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@utility icon-filled {
+  font-variation-settings: 'FILL' 1;
+}
+
+@utility bg-grid-paper {
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgb(204 198 188 / 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(204 198 188 / 0.15) 1px, transparent 1px);
+}
+
+/* Crisp offset shadows instead of blurred ones (DESIGN.md › Elevation). */
+@utility tactile-shadow {
+  box-shadow: 0 4px 0 0 var(--color-on-surface);
+}
+
+@utility tactile-shadow-founder {
+  box-shadow: 0 4px 0 0 var(--color-founder);
+}
+
+@utility phone-frame-shadow {
+  box-shadow:
+    0 25px 50px -12px rgb(28 28 23 / 0.18),
+    0 0 0 1px var(--color-outline-variant);
+}
+
+@layer components {
+  .material-symbols-outlined {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    user-select: none;
+  }
+}

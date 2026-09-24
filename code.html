@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DirigeFácil — Gestão Financeira e Lucro Real para Motoristas</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatum -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#4a463f",
+            "surface-container": "#f1eee5",
+            "surface-container-low": "#f7f3ea",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#87837d",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e5e2da",
+            "tertiary-fixed-dim": "#ffb4a3",
+            "secondary-fixed-dim": "#b1d27d",
+            "surface-dim": "#dddad1",
+            "primary-container": "#1d1b17",
+            "primary-fixed": "#e8e1db",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#3d0600",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffdad2",
+            "surface-container-high": "#ebe8df",
+            "on-primary-fixed-variant": "#494641",
+            "surface-variant": "#e5e2da",
+            "on-tertiary-fixed-variant": "#84250f",
+            "inverse-surface": "#31312b",
+            "on-surface": "#1c1c17",
+            "primary-fixed-dim": "#cbc6bf",
+            "secondary-fixed": "#ccee96",
+            "inverse-primary": "#cbc6bf",
+            "on-tertiary-container": "#d66044",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#fcf9f0",
+            "outline": "#7b766e",
+            "on-secondary-container": "#516d25",
+            "on-secondary-fixed": "#121f00",
+            "on-tertiary-fixed": "#3d0600",
+            "inverse-on-surface": "#f4f1e8",
+            "surface": "#fcf9f0",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#4b671f",
+            "primary": "#000000",
+            "on-primary-fixed": "#1d1b17",
+            "secondary-container": "#ccee96",
+            "on-background": "#1c1c17",
+            "tertiary": "#000000",
+            "background": "#fcf9f0",
+            "outline-variant": "#ccc6bc",
+            "on-error-container": "#93000a",
+            "surface-tint": "#615e59",
+            "on-secondary-fixed-variant": "#344e06",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "margin-md": "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter-md": "1rem",
+            "margin": "1rem",
+            "gutter": "0.75rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "numeric-md": ["Outfit"],
+            "headline-md": ["Archivo Narrow"],
+            "body-md": ["Archivo Narrow"],
+            "display-lg-mobile": ["Outfit"],
+            "headline-sm": ["Archivo Narrow"],
+            "numeric-hero": ["Outfit"],
+            "numeric-sm": ["Outfit"],
+            "body-sm": ["Archivo Narrow"],
+            "label-caps": ["Archivo Narrow"],
+            "numeric-lg": ["Outfit"],
+            "body-lg": ["Archivo Narrow"],
+            "headline-lg": ["Archivo Narrow"],
+            "display-lg": ["Outfit"]
+          },
+          "fontSize": {
+            "numeric-md": ["18px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["17px", { "lineHeight": "22px", "fontWeight": "600" }],
+            "numeric-hero": ["38px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "numeric-sm": ["14px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "numeric-lg": ["24px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Subtle analog paper texture / grid lines */
+    .bg-grid-paper {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(204, 198, 188, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(204, 198, 188, 0.15) 1px, transparent 1px);
+    }
+    .tactile-shadow {
+      box-shadow: 0 4px 0 0 #1c1c17;
+    }
+    .tactile-shadow-gold {
+      box-shadow: 0 4px 0 0 #b07c14;
+    }
+    .tactile-shadow-sm {
+      box-shadow: 0 2px 0 0 #1c1c17;
+    }
+    .phone-mockup-frame {
+      box-shadow: 0 25px 50px -12px rgba(28, 28, 23, 0.18), 0 0 0 1px #ccc6bc;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md min-h-screen selection:bg-secondary selection:text-on-secondary">
+<!-- ==================== HEADER (TopNavBar from JSON) ==================== -->
+<header class="bg-surface border-b border-outline-variant docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-md max-w-7xl mx-auto h-16">
+<!-- Logo DirigeFácil -->
+<a class="flex items-center gap-2.5" href="#">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-surface flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined fill text-secondary-fixed text-2xl" data-icon="sports_motorsports">sports_motorsports</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-on-surface uppercase tracking-tight flex items-center gap-1">
+            DirigeFácil
+            <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant -mt-1 tracking-widest">LUCRO REAL DO MOTORISTA</span>
+</div>
+</a>
+<!-- Navigation Links from JSON -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-150" href="#recursos">Recursos</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-150" href="#comparativo">Comparativo</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-150" href="#planos">Planos</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-150" href="#como-instalar">Como Instalar</a>
+</nav>
+<!-- Trailing Actions from JSON & Style -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center px-4 py-2 text-headline-sm font-headline-sm text-on-surface hover:text-secondary transition-colors duration-150 active:translate-y-0.5" href="#login">
+          Entrar
+        </a>
+<a class="inline-flex items-center gap-2 bg-secondary text-on-secondary px-5 py-2.5 rounded-full font-headline-sm text-headline-sm shadow-sm hover:brightness-105 active:translate-y-0.5 transition-all" href="#baixar">
+<span>Começar Grátis</span>
+<span class="material-symbols-outlined text-sm font-bold" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<!-- ==================== HERO SECTION EXPANSIVO ==================== -->
+<!-- Inspired by reference composition with soft luminous radial glow and dual floating mockups -->
+<section class="relative overflow-hidden bg-grid-paper pt-12 pb-20 lg:pt-16 lg:pb-28">
+<!-- Ambient Luminous Gradient Spotlights matching the hero reference -->
+<div class="absolute top-1/4 right-0 w-[550px] h-[550px] bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10 translate-x-1/3"></div>
+<div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-surface-container-high/60 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto px-margin-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Hero Column -->
+<div class="lg:col-span-6 flex flex-col items-start space-y-6">
+<!-- Pill Badge top (Ref image style) -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant shadow-sm">
+<span class="flex items-center gap-1 text-sm">
+<span class="material-symbols-outlined text-secondary text-lg fill" data-icon="local_taxi">local_taxi</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg fill" data-icon="two_wheeler">two_wheeler</span>
+<span class="material-symbols-outlined text-secondary text-lg fill" data-icon="local_shipping">local_shipping</span>
+</span>
+<span class="h-3 w-px bg-outline-variant"></span>
+<span class="text-body-sm font-body-sm font-bold text-on-surface tracking-wide">
+              Desenvolvido para Uber, 99 &amp; Entregadores
+            </span>
+</div>
+<!-- Hero Main Headline -->
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface tracking-tight leading-tight">
+            Controle seu dinheiro. <br/>
+<span class="text-secondary font-extrabold underline decoration-secondary-fixed decoration-4 underline-offset-8">A gente calcula o seu lucro real.</span>
+</h1>
+<!-- Hero Subheadline -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+            Chega de se iludir com o faturamento bruto que o aplicativo mostra. Saiba na hora quanto realmente sobra no seu bolso descontando combustível, alimentação, taxas e desgaste por quilômetro.
+          </p>
+<!-- Dual CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
+<a class="inline-flex items-center justify-center gap-3 bg-secondary hover:bg-secondary/90 text-on-secondary px-7 py-4 rounded-full font-headline-md text-headline-md font-bold tactile-shadow active:translate-y-1 transition-all" href="#baixar">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+<span>Baixar grátis — 14 dias</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-surface-container-lowest hover:bg-surface-container-high border border-outline-variant text-on-surface px-6 py-4 rounded-full font-headline-md text-headline-md font-bold transition-all" href="#comparativo">
+<span class="material-symbols-outlined text-xl text-on-surface-variant" data-icon="play_circle">play_circle</span>
+<span>Nosso manifesto</span>
+</a>
+</div>
+<!-- Micro Features (Offline & Backup) -->
+<div class="grid grid-cols-2 gap-4 pt-4 w-full sm:w-auto">
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-lg" data-icon="offline_pin">offline_pin</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">100% Offline</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Funciona até sem sinal</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Segurança Total</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">Seus dados só no aparelho</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Hero Column: Dual Overlapping App Mockups mimicking the reference composition -->
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<!-- Backing Dash Card Mockup (Simulated Desktop/Tablet Dashboard like in reference) -->
+<div class="w-full max-w-lg bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 shadow-2xl relative">
+<div class="flex items-center justify-between border-b border-outline-variant pb-3 mb-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span class="w-3 h-3 rounded-full bg-surface-tint"></span>
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="ml-2 text-label-caps font-label-caps text-on-surface-variant">PAINEL DE CONTROLE DIÁRIO</span>
+</div>
+<span class="px-2 py-0.5 rounded text-body-sm font-body-sm bg-secondary-fixed text-on-secondary-fixed font-bold">Hoje • Em tempo real</span>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded-xl bg-primary-container text-surface flex justify-between items-center">
+<div>
+<span class="text-label-caps font-label-caps text-on-primary-container uppercase tracking-wider block">Líquido de Hoje</span>
+<span class="text-numeric-hero font-numeric-hero text-surface">R$ 214,50</span>
+</div>
+<div class="text-right">
+<span class="text-body-sm font-body-sm text-secondary-fixed font-bold block">+ R$ 350,00 Entrou</span>
+<span class="text-body-sm font-body-sm text-tertiary-fixed-dim block">- R$ 135,50 Custos</span>
+</div>
+</div>
+<!-- Realistic Chart Component -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant">
+<div class="flex justify-between items-center mb-3">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Desempenho por Hora</span>
+<span class="text-body-sm font-body-sm text-secondary font-bold">Média: R$ 32,80/h</span>
+</div>
+<!-- SVG Sparkline & Filled Area -->
+<svg class="w-full h-24" fill="none" viewbox="0 0 300 80">
+<defs>
+<lineargradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4b671f" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#4b671f" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<path d="M 0,65 Q 40,55 70,30 T 140,40 T 210,15 T 280,20 L 300,10 L 300,80 L 0,80 Z" fill="url(#chartGrad)"></path>
+<path d="M 0,65 Q 40,55 70,30 T 140,40 T 210,15 T 280,20 L 300,10" fill="none" stroke="#4b671f" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="210" cy="15" fill="#4b671f" r="4" stroke="#ffffff" stroke-width="2"></circle>
+</svg>
+<div class="flex justify-between text-body-sm font-body-sm text-on-surface-variant pt-2">
+<span>06:00</span>
+<span>10:00</span>
+<span>14:00</span>
+<span>18:00</span>
+<span>22:00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Phone Mockup (Front Overlap exactly as in reference) -->
+<div class="absolute -right-2 sm:-right-4 -bottom-10 sm:-bottom-12 w-64 sm:w-72 rounded-[36px] bg-primary-container p-2.5 phone-mockup-frame border-2 border-outline z-20">
+<!-- Screen Area with real screenshot -->
+<div class="rounded-[28px] overflow-hidden bg-surface-bright border border-outline-variant relative">
+<!-- Notch / Dynamic Island -->
+<div class="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-primary rounded-full z-30"></div>
+<img alt="Aplicativo DirigeFácil exibindo a tela de entradas financeiras para motoristas" class="w-full h-auto object-cover block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAriYwCNGZSH7-CZ-8sEHlCzXViov3ERMoLrzHrvI0ZARtETvTEvSVIxXViccbflhPXPcX6Nb9BJ-mg7GIN6knIVUAwivcf_qAmz2ua62OJlJk2vSOl3urxFWMvHSDjz7wdbrg2xGHH49_FYV7lUuzyrzCV5f987_tFkgm9SkTy4B__EWe4F8PwliiVdLxPSBYd9JcRtYYDPOXvzC8r-yBoa5fFGmDQefjlT5N1jZCHY7elA2yO57Nmyc4wO8wWgN927w"/>
+</div>
+<!-- Floating Floating Net Profit Indicator Pill -->
+<div class="absolute -left-6 top-1/3 bg-surface-container-lowest border border-outline-variant p-3 rounded-2xl shadow-xl flex items-center gap-3 z-30">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="price_check">price_check</span>
+</div>
+<div>
+<span class="text-label-caps font-label-caps text-on-surface-variant block">MARGEM LÍQUIDA</span>
+<span class="text-numeric-md font-numeric-md text-secondary font-bold">61.2% Limpo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== BARRA DE BENEFÍCIOS TÁTEIS ==================== -->
+<section class="border-y border-outline-variant bg-surface-container-high py-4">
+<div class="max-w-7xl mx-auto px-margin-md">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+<div class="flex items-center justify-center gap-2.5 py-1">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="electric_bolt">electric_bolt</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">18 MB Leve e ágil</span>
+</div>
+<div class="flex items-center justify-center gap-2.5 py-1 border-l border-outline-variant/60">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="block">block</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Zero Propagandas</span>
+</div>
+<div class="flex items-center justify-center gap-2.5 py-1 border-l border-outline-variant/60">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="credit_card_off">credit_card_off</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Sem pedir cartão</span>
+</div>
+<div class="flex items-center justify-center gap-2.5 py-1 border-l border-outline-variant/60">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="handshake">handshake</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">Feito para a rua</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== O CONFRONTO: FATURAMENTO BRUTO VS LUCRO REAL ==================== -->
+<section class="py-20 bg-surface" id="comparativo">
+<div class="max-w-7xl mx-auto px-margin-md">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="px-3.5 py-1 rounded-full text-label-caps font-label-caps bg-surface-container-highest text-on-surface-variant uppercase tracking-wider">
+          A Realidade das Plataformas
+        </span>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mt-3">
+          Você faturou R$ 350 hoje. Mas quanto realmente é seu?
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-3">
+          Os aplicativos de corrida mostram números grandes para te manter no trânsito. O DirigeFácil mostra o que sobra de verdade após abastecer, almoçar e calcular a depreciação do carro.
+        </p>
+</div>
+<!-- Comparative Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left: The Illusion Card -->
+<div class="lg:col-span-5 bg-surface-container-low border border-outline-variant rounded-2xl p-6 relative">
+<div class="flex items-center justify-between border-b border-outline-variant pb-4 mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-2xl" data-icon="warning">warning</span>
+<span class="text-headline-md font-headline-md font-bold text-on-surface">A Ilusão do App</span>
+</div>
+<span class="text-body-sm font-body-sm text-error bg-error-container px-2.5 py-1 rounded font-bold">Sem controle</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between py-2 border-b border-outline-variant/50 text-body-md font-body-md">
+<span class="text-on-surface-variant">Faturamento aparente (Uber/99)</span>
+<span class="font-numeric-md text-numeric-md font-bold text-on-surface">R$ 350,00</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/50 text-body-md font-body-md text-error">
+<span>Combustível (Tanque do dia)</span>
+<span class="font-numeric-md text-numeric-md font-bold">- R$ 115,00</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/50 text-body-md font-body-md text-error">
+<span>Almoço na rua &amp; Café</span>
+<span class="font-numeric-md text-numeric-md font-bold">- R$ 28,00</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/50 text-body-md font-body-md text-error">
+<span>Pedágio ou Estacionamento</span>
+<span class="font-numeric-md text-numeric-md font-bold">- R$ 9,55</span>
+</div>
+<div class="flex justify-between py-2 border-b border-outline-variant/50 text-body-md font-body-md text-outline">
+<span>Desgaste invisível de pneu / óleo (180 km)</span>
+<span class="font-numeric-md text-numeric-md font-bold">- R$ 36,00</span>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-xl bg-surface-container-highest border border-outline-variant">
+<div class="flex justify-between items-center">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase font-bold">O que sobra no bolso:</span>
+<span class="text-numeric-lg font-numeric-lg font-bold text-error">R$ 161,45</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+              Você rodou 11 horas achando que ganhou R$ 350, mas sua hora líquida foi de apenas <strong>R$ 14,67/h</strong>.
+            </p>
+</div>
+</div>
+<!-- Center: Interactive Comparison Arrow -->
+<div class="lg:col-span-2 flex flex-col items-center justify-center text-center">
+<div class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="compare_arrows">compare_arrows</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant font-bold uppercase mt-2 tracking-wider">
+            Clareza Total
+          </span>
+</div>
+<!-- Right: DirigeFácil Reality Card with Actual Screenshot reference https://lh3.googleusercontent.com/aida-public/AB6AXuBGmk8uXeUgsnelRgReIcqdXc080qV2SrM646jE-uFD-i81nA-KSFvWcI6gbiIRps5fTcEqc09dQuOC_ucAh6j_xJ3rgMOgujGtX5d626waqrjnyUbF3rAT0N4FV7FKQaLAa7wjeR2hMxZPGzDEIz_UgkuUnqaQY2DKpS1mHmcU7zGGzH_4DBbH7cZlKxGNYzdPYWeBV-xcFczPZ32_Z0vczcfCrL20-oJsvJcoq0Tx4uLBauXwUoy0yCQgLu9s6zvYkg -->
+<div class="lg:col-span-5 bg-surface-container-lowest border-2 border-secondary rounded-2xl p-6 shadow-xl relative">
+<div class="absolute -top-3.5 right-6 bg-secondary text-on-secondary text-label-caps font-label-caps uppercase px-3 py-1 rounded-full font-bold">
+            Com DirigeFácil
+          </div>
+<div class="flex items-center gap-2 border-b border-outline-variant pb-4 mb-4">
+<span class="material-symbols-outlined text-secondary text-2xl fill" data-icon="verified">verified</span>
+<span class="text-headline-md font-headline-md font-bold text-on-surface">Gestão de Lucro Limpo</span>
+</div>
+<div class="p-4 rounded-xl bg-primary-container text-surface mb-4">
+<div class="flex justify-between items-center">
+<span class="text-label-caps font-label-caps text-secondary-fixed uppercase">Resultado do Mês</span>
+<span class="text-body-sm font-body-sm text-surface-variant">Setembro</span>
+</div>
+<div class="text-numeric-hero font-numeric-hero text-surface mt-1">R$ 197,45</div>
+<div class="flex justify-between text-body-sm font-body-sm mt-3 pt-2 border-t border-outline">
+<span class="text-secondary-fixed">● Entrou: R$ 350,00</span>
+<span class="text-tertiary-fixed-dim">● Saiu: R$ 152,55</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 text-body-sm font-body-sm">
+<div class="p-3 rounded-lg bg-surface-container-high">
+<span class="text-label-caps font-label-caps text-on-surface-variant block">CUSTO POR KM</span>
+<span class="text-numeric-md font-numeric-md text-on-surface font-bold">R$ 0,15 / km</span>
+</div>
+<div class="p-3 rounded-lg bg-secondary-fixed/50">
+<span class="text-label-caps font-label-caps text-on-secondary-fixed block">MARGEM LÍQUIDA</span>
+<span class="text-numeric-md font-numeric-md text-secondary font-bold">56.4% no Bolso</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Pronto para exportar ao contador</span>
+<span class="inline-flex items-center gap-1 text-headline-sm font-headline-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-base" data-icon="content_copy">content_copy</span>
+              Copiar Resumo
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== RECURSOS ESSENCIAIS COM TELAS REAIS DO APP ==================== -->
+<section class="py-20 bg-surface-container" id="recursos">
+<div class="max-w-7xl mx-auto px-margin-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="px-3.5 py-1 rounded-full text-label-caps font-label-caps bg-surface-container-lowest text-secondary uppercase font-bold border border-outline-variant">
+            Telas Reais • Sem Maquiagem
+          </span>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mt-3">
+            Projetado para usar no suporte do painel, com uma mão só
+          </h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md">
+          Sem telas complexas, sem letras miúdas. Números grandes legíveis sob a luz do sol do meio-dia e botões que você aperta sem errar.
+        </p>
+</div>
+<!-- Feature Grid with Real Mockups -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1: Metas Inteligentes (Print 10) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:border-secondary transition-all group shadow-sm">
+<div class="mb-4">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-3">
+<span class="material-symbols-outlined text-xl" data-icon="flag">flag</span>
+</div>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface">Metas Inteligentes</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Saiba exatamente quantas corridas faltam para atingir sua meta do dia.
+            </p>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant bg-surface">
+<img alt="Tela de Metas do aplicativo DirigeFácil com barra de progresso diária, semanal e mensal" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjsPcQnmnMCKowWZV7-WgpJzZ-wTeWCBfS9Ou9DUuNKaDUDKi5eVX9Hb4e3NjYPF8B1v0LvckcSgqroEsozyw7-lbuSEEqBaux36_GMBSs82jU0DftSKhhe0fWkCgA59CvVqO5p4GkiciNy1HmprA3GVQb0C0MwnlvXJgT0IikjCMIlB-RfiSJ50glTUJm6Ppi0kIx9NNb7SOxdptG4dLkAMPCAckyF0vpke2j3gi8BXkVfG0n1NZQWA5VpNCqjfkDsQ"/>
+</div>
+</div>
+<!-- Card 2: Lançamento Rápido de Entradas (Print 4) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:border-secondary transition-all group shadow-sm">
+<div class="mb-4">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-surface mb-3">
+<span class="material-symbols-outlined text-xl text-secondary-fixed" data-icon="add_circle">add_circle</span>
+</div>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface">Entrada com 2 Toques</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Identifique corridas de Uber, 99, Indrive ou corridas particulares num relance.
+            </p>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant bg-surface">
+<img alt="Tela de Entradas do DirigeFácil com registro de corrida particular de R$ 100,00" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJkyHf9EQQqzZ7qTa-0tTNtcivCW2SukXhvSKhdew5l6zoI-oI2WfIW-TozL737mAXGX2NZAv_2FbeF4-gIszL-1kknqUILTUpzxysyAjrz42yg0m53BvQXO2YwePmt7UYqkWlIfa1TZQqjtFAkqZ-Mqzoek-C3SxpeVkXCJyoinEQ8HbKywSBKLKcgWhduwE_D6sEGXg7zQfjOAoS6QGzdjMq4tN6Bieji62gTw8M9eCGs5FHmFSOkcQulsRKOsgKPA"/>
+</div>
+</div>
+<!-- Card 3: Controle Rápido de Gastos (Print 2) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:border-secondary transition-all group shadow-sm">
+<div class="mb-4">
+<div class="w-10 h-10 rounded-xl bg-error-container flex items-center justify-center text-error mb-3">
+<span class="material-symbols-outlined text-xl" data-icon="local_gas_station">local_gas_station</span>
+</div>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface">Controle de Gastos</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Alimentação, gasolina, pedágio e estacionamento categorizados na hora.
+            </p>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant bg-surface">
+<img alt="Tela de Gastos do aplicativo mostrando despesas com alimentação e estacionamento" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd8JBS9uftYOxdSnjPVHolunN0uM5oX09jueWW4LuRvvfBmDnBQ6vANmguEeT1q11e6HDwhf1afq6DwcZ6CV6OpQVaEYSQoWSMi6bQK2RDaIQa2OpkZFVbneTChghsK3D4YcsWY74IIzDIjN0LXDwHPnpdTPVira4PCcc4hUXEzuhBkTkioP3z15LsBKu84gbjeI8wPuw_Ho51pYDG-pAqi8iKYhXSRepXyB9vXqYkgzUImlqASvgsZiFc2Bw4yhGU7g"/>
+</div>
+</div>
+<!-- Card 4: Fechamento & Contador (Print 11) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-4 flex flex-col justify-between hover:border-secondary transition-all group shadow-sm">
+<div class="mb-4">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface mb-3">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+</div>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface">Fechamento do Mês</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Copie o relatório pronto com 1 clique para WhatsApp, banco ou declaração de MEI.
+            </p>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant bg-surface">
+<img alt="Tela de Fechamento de Mês com margem líquida, dias trabalhados e custo por km" class="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbKx0YYSl_ueRJ_7iPpEf9kF7vxWbMB8smTkHAYLF3YttgQe5LbDP410cDPpD65yrUKvF2N7eFMEgmb9vm2ck4hnejs8cHAY32HJhs4HXfXuVA4CizDTH3T2RtzslIVpfHIZZJBepXQEgXrnEkz5r-B8gwJdBJbSUATlMIrHGWmC3lvpPaem3wnv574PsbqFSO_HLZmKVFvjVAduuR9rzQQ3KREO9jHmQ7xTpe-dza1fFTbnziapP44o4YZkjNGoiuQg"/>
+</div>
+</div>
+</div>
+<!-- Feature Highlight Row: Veículos & Odômetro -->
+<div class="mt-12 p-8 rounded-3xl bg-surface-container-lowest border border-outline-variant flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="speed">speed</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md font-bold text-on-surface">Cálculo de Custo por Quilômetro Rodado</h4>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mt-1">
+              Basta informar o odômetro ao sair de casa e ao voltar. O DirigeFácil calcula se aquela corrida longa realmente compensou ou se você apenas pagou para trabalhar.
+            </p>
+</div>
+</div>
+<div class="flex-shrink-0">
+<a class="inline-flex items-center gap-2 bg-primary-container text-surface px-6 py-3 rounded-full font-headline-sm text-headline-sm hover:bg-black transition-all" href="#baixar">
+<span>Experimentar sem cadastro</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== PLANOS COM DESTAQUE DOURADO ==================== -->
+<section class="py-24 bg-surface" id="planos">
+<div class="max-w-7xl mx-auto px-margin-md">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#f8f1dc] border border-[#d4af37] text-on-surface font-bold text-label-caps uppercase">
+<span class="material-symbols-outlined text-sm text-[#b07c14] fill" data-icon="star">star</span>
+          Condição Especial de Lançamento
+        </div>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mt-3">
+          Planos transparentes. Menos de R$ 0,11 por dia.
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+          Teste por 14 dias sem compromisso. Se não gostar, não paga nada e seus registros continuam salvos no seu aparelho.
+        </p>
+</div>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+<!-- Mensal -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase font-bold">Flexibilidade</span>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface mt-1">Mensal</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">R$</span>
+<span class="text-numeric-hero font-numeric-hero text-on-surface">9,90</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-3 border-t border-outline-variant pt-3">
+              Ideal para testar no dia a dia da rua sem amarras.
+            </p>
+<ul class="space-y-2 mt-4 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Lançamentos ilimitados
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                1 Veículo cadastrado
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Suporte básico
+              </li>
+</ul>
+</div>
+<a class="mt-8 block text-center py-3 px-4 rounded-xl border border-outline-variant font-headline-sm text-headline-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors" href="#baixar">
+            Assinar Mensal
+          </a>
+</div>
+<!-- Trimestral -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase font-bold">Trimestre</span>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface mt-1">Trimestral</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">R$</span>
+<span class="text-numeric-hero font-numeric-hero text-on-surface">24,90</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">/trimestre</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-3 border-t border-outline-variant pt-3">
+              Economize 16% em relação ao plano mensal avulso.
+            </p>
+<ul class="space-y-2 mt-4 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Lançamentos ilimitados
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Até 2 veículos
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Backup de dados
+              </li>
+</ul>
+</div>
+<a class="mt-8 block text-center py-3 px-4 rounded-xl border border-outline-variant font-headline-sm text-headline-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors" href="#baixar">
+            Assinar Trimestral
+          </a>
+</div>
+<!-- PLANO FUNDADOR (DESTAQUE GOLDEN/AMBER) -->
+<div class="bg-surface-container-lowest border-2 border-[#b07c14] rounded-2xl p-6 flex flex-col justify-between relative shadow-xl tactile-shadow-gold lg:-translate-y-2">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#b07c14] text-surface-container-lowest text-label-caps font-label-caps uppercase px-4 py-1 rounded-full font-bold tracking-wider shadow">
+            ★ OFERTA FUNDADOR (100 VAGAS) ★
+          </div>
+<div>
+<span class="text-label-caps font-label-caps text-[#b07c14] uppercase font-bold">Mais Vantajoso</span>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface mt-1 flex items-center gap-1.5">
+              Anual Fundador
+              <span class="material-symbols-outlined text-[#b07c14] text-xl fill" data-icon="verified">verified</span>
+</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">R$</span>
+<span class="text-numeric-hero font-numeric-hero text-[#b07c14]">39,90</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">/ano</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary font-bold mt-1">
+              Apenas R$ 3,32 ao mês (Preço vitalício garantido)
+            </p>
+<ul class="space-y-2.5 mt-5 border-t border-outline-variant pt-4 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2 font-bold">
+<span class="material-symbols-outlined text-[#b07c14] text-base font-bold fill" data-icon="check_circle">check_circle</span>
+                Acesso a todas atualizações futuras
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Veículos ilimitados (Carro + Moto)
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Exportação de relatórios em PDF / Excel
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Grupo VIP com os desenvolvedores
+              </li>
+</ul>
+</div>
+<a class="mt-8 block text-center py-3.5 px-4 rounded-xl bg-[#b07c14] text-surface-container-lowest font-headline-md text-headline-md font-bold hover:brightness-110 active:translate-y-0.5 transition-all shadow-md" href="#baixar">
+            Garantir Vaga de Fundador
+          </a>
+</div>
+<!-- Anual Padrão -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 flex flex-col justify-between hover:border-outline transition-all">
+<div>
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase font-bold">Tradicional</span>
+<h3 class="text-headline-md font-headline-md font-bold text-on-surface mt-1">Anual Padrão</h3>
+<div class="mt-4 flex items-baseline gap-1">
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold">R$</span>
+<span class="text-numeric-hero font-numeric-hero text-on-surface">59,90</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">/ano</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-3 border-t border-outline-variant pt-3">
+              Cobrado anualmente após o encerramento do lote Fundador.
+            </p>
+<ul class="space-y-2 mt-4 text-body-sm font-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Lançamentos ilimitados
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Exportação para contador
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-base font-bold" data-icon="check">check</span>
+                Suporte prioritário
+              </li>
+</ul>
+</div>
+<a class="mt-8 block text-center py-3 px-4 rounded-xl border border-outline-variant font-headline-sm text-headline-sm font-bold text-on-surface hover:bg-surface-container-high transition-colors" href="#baixar">
+            Assinar Anual Padrão
+          </a>
+</div>
+</div>
+<!-- Trust Note Footer -->
+<div class="mt-12 text-center text-body-md font-body-md text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="shield">shield</span>
+<span>Se não assinar após 14 dias, <strong>nada é apagado</strong>. Seu histórico continua no seu aparelho.</span>
+</div>
+</div>
+</section>
+<!-- ==================== GUIA DE INSTALAÇÃO (4 PASSOS) ==================== -->
+<section class="py-20 bg-surface-container-high border-y border-outline-variant" id="como-instalar">
+<div class="max-w-7xl mx-auto px-margin-md">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="px-3.5 py-1 rounded-full text-label-caps font-label-caps bg-surface-container-lowest text-on-surface uppercase font-bold border border-outline-variant">
+          Sem Burocracia
+        </span>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mt-3">
+          Como instalar em menos de 1 minuto
+        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+          O DirigeFácil é um app direto e ultraleve de apenas 18MB, sem precisar passar por lojas pesadas.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 relative">
+<div class="w-10 h-10 rounded-full bg-primary-container text-surface flex items-center justify-center font-bold font-numeric-md text-numeric-md mb-4">
+            1
+          </div>
+<h4 class="text-headline-md font-headline-md font-bold text-on-surface">Baixe o Arquivo</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+            Toque no botão 'Baixar Grátis'. O download de 18MB começa instantaneamente.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 relative">
+<div class="w-10 h-10 rounded-full bg-primary-container text-surface flex items-center justify-center font-bold font-numeric-md text-numeric-md mb-4">
+            2
+          </div>
+<h4 class="text-headline-md font-headline-md font-bold text-on-surface">Abra o Download</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+            Puxe a barra de notificações do seu celular e clique no arquivo baixado.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 relative">
+<div class="w-10 h-10 rounded-full bg-primary-container text-surface flex items-center justify-center font-bold font-numeric-md text-numeric-md mb-4">
+            3
+          </div>
+<h4 class="text-headline-md font-headline-md font-bold text-on-surface">Permita a Fonte</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+            Se o Android perguntar, clique em 'Permitir desta fonte' (procedimento padrão para apps diretos).
+          </p>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-6 relative">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold font-numeric-md text-numeric-md mb-4">
+            ✓
+          </div>
+<h4 class="text-headline-md font-headline-md font-bold text-on-surface">Conclua e Rode!</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+            Pronto! Abra o DirigeFácil, coloque sua meta de hoje e comece a lucrar de verdade.
+          </p>
+</div>
+</div>
+<!-- WhatsApp Help Banner -->
+<div class="mt-10 p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h5 class="text-headline-sm font-headline-sm font-bold text-on-surface">Ficou com alguma dúvida na instalação?</h5>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Nossa equipe atende motoristas diretamente no WhatsApp em horário comercial.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 bg-surface hover:bg-surface-container-high border border-outline-variant px-5 py-2.5 rounded-full font-headline-sm text-headline-sm font-bold text-on-surface transition-all" href="https://wa.me/" target="_blank">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="chat">chat</span>
+<span>Chamar no WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ==================== FAQ ACCORDION ==================== -->
+<section class="py-20 bg-surface">
+<div class="max-w-4xl mx-auto px-margin-md">
+<div class="text-center mb-12">
+<span class="px-3.5 py-1 rounded-full text-label-caps font-label-caps bg-surface-container-highest text-on-surface-variant uppercase font-bold">
+          Perguntas Frequentes
+        </span>
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mt-3">
+          Tudo o que você precisa saber
+        </h2>
+</div>
+<div class="space-y-4" id="faq-container">
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-5 open:bg-surface-container-low transition-colors cursor-pointer">
+<summary class="flex justify-between items-center text-headline-sm font-headline-sm font-bold text-on-surface list-none">
+<span>O aplicativo funciona sem sinal de internet (offline)?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Sim! O DirigeFácil foi concebido exatamente para a realidade das ruas brasileiras. Você pode registrar suas corridas, paradas no posto e despesas mesmo sem pacote de dados ou em túneis e garagens subterrâneas.
+          </p>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-5 open:bg-surface-container-low transition-colors cursor-pointer">
+<summary class="flex justify-between items-center text-headline-sm font-headline-sm font-bold text-on-surface list-none">
+<span>Preciso colocar dados de cartão para os 14 dias de teste?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Não! Acreditamos no respeito ao motorista. Você baixa, usa todas as ferramentas por 14 dias e só assina se realmente notar a diferença no seu bolso.
+          </p>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-5 open:bg-surface-container-low transition-colors cursor-pointer">
+<summary class="flex justify-between items-center text-headline-sm font-headline-sm font-bold text-on-surface list-none">
+<span>E se eu trocar de celular, perco meus lançamentos?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Não. Você pode acionar a opção de backup e exportar uma cópia dos seus dados para o seu e-mail ou WhatsApp a qualquer instante com apenas um toque.
+          </p>
+</details>
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl p-5 open:bg-surface-container-low transition-colors cursor-pointer">
+<summary class="flex justify-between items-center text-headline-sm font-headline-sm font-bold text-on-surface list-none">
+<span>Consigo registrar corridas particulares e de frete?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Com certeza! O aplicativo possui atalhos para Corridas Particulares (PA), Uber (UB), 99, Gorjetas e Fretes avulsos, permitindo comparar de qual origem vem o seu melhor lucro.
+          </p>
+</details>
+</div>
+</div>
+</section>
+<!-- ==================== CTA FINAL EXPANSIVO ==================== -->
+<section class="py-16 bg-surface" id="baixar">
+<div class="max-w-7xl mx-auto px-margin-md">
+<div class="bg-primary-container text-surface rounded-3xl p-8 md:p-16 border-2 border-outline relative overflow-hidden shadow-2xl">
+<!-- Subtle Glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-3xl relative z-10">
+<span class="px-3.5 py-1 rounded-full text-label-caps font-label-caps bg-secondary-fixed text-on-secondary-fixed uppercase font-bold tracking-wider">
+            Comece Hoje Mesmo
+          </span>
+<h2 class="text-display-lg-mobile md:text-display-lg font-display-lg text-surface mt-4 leading-tight">
+            Pare de trabalhar no escuro. <br/>
+<span class="text-secondary-fixed">Saiba exatamente para onde vai cada centavo.</span>
+</h2>
+<p class="text-body-lg font-body-lg text-surface-variant mt-4 max-w-xl">
+            Junte-se a centenas de motoristas e entregadores que recuperaram o controle de sua rotina e já sabem quando vale a pena ligar o motor.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
+<a class="inline-flex items-center justify-center gap-3 bg-secondary hover:bg-secondary/90 text-on-secondary px-8 py-4 rounded-full font-headline-md text-headline-md font-bold tactile-shadow active:translate-y-1 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="download">download</span>
+<span>Baixar APK Direto (18 MB)</span>
+</a>
+<div class="flex items-center gap-2 text-surface-variant text-body-sm font-body-sm px-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg" data-icon="security">security</span>
+<span>Livre de vírus • Compatível com Android 8.0+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== FOOTER (From JSON Component) ==================== -->
+<footer class="bg-surface-container border-t border-outline-variant docked full-width bottom-0">
+<div class="w-full py-12 px-margin-md max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Copyright from JSON -->
+<div class="flex flex-col items-center md:items-start">
+<a class="text-headline-md font-headline-md font-bold text-on-surface uppercase tracking-tight flex items-center gap-1 mb-1" href="#">
+          DirigeFácil
+          <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+</a>
+<p class="text-body-sm font-body-sm text-on-surface-variant text-center md:text-left">
+          © 2024 DirigeFácil Tecnologia Ltda. Gestão financeira para motoristas e entregadores.
+        </p>
+</div>
+<!-- Links from JSON -->
+<nav class="flex flex-wrap justify-center gap-6 text-body-sm font-body-sm">
+<a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-colors duration-150" href="#termos">
+          Termos de Uso
+        </a>
+<a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-colors duration-150" href="#privacidade">
+          Privacidade
+        </a>
+<a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-colors duration-150" href="https://wa.me/" target="_blank">
+          Suporte WhatsApp
+        </a>
+<a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-colors duration-150" href="#ajuda">
+          Central de Ajuda
+        </a>
+</nav>
+</div>
+</footer>
+</body></html>

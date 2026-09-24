@@ -1,0 +1,7 @@
+{
+    "version":  "1.1.0",
+    "build":  2,
+    "min_build":  1,
+    "apk_url":  "https://github.com/User-Standart/Release-DF/releases/latest/download/DirigeFacil.apk",
+    "notes":  "Assinatura, backup na nuvem e aviso de atualização."
+}
